@@ -63,7 +63,7 @@ public:
 
     bool attaque(Animal &a) {
         if (typeAttaque.resoudreAttaque(a.getAttaque())) {
-            a.setVivant(false);
+            a.setVivant(false); //Quand l'attaque est true le joueur a n'est plus vivant
             return true;
         }
         return false;
@@ -72,12 +72,32 @@ public:
     virtual void afficher() const = 0;
 };
 
+<<<<<<< HEAD
 //---------------------------------------------------------------Classes spécifiques---------------------------------------------------------------
 class Pierre : public Animal {
 public:
     Pierre(int maxX, int maxY) : Animal(maxX, maxY) {
         nom = "Pierre";
         typeAttaque = Attaque(0); // Toujours "Pierre"
+=======
+//Classe représentant un Loup
+class Loup : public Animal {
+public:
+    Loup(int maxX, int maxY) : Animal (maxX, maxY) {setAttaque(); }
+
+    void setAttaque() {}
+
+//---------------------------------------------------------------Attaque---------------------------------------------------------------
+
+//Classe Attaque
+class Attaque {
+    protected:
+    int type // 0 :pierre, 1: Feuille, 2:Ciseaux
+
+    public:
+    Attaque() {
+        type = rand() % 3; // Attaque aléatoire pierre feuille ou ciseaux
+>>>>>>> refs/remotes/origin/main
     }
 
     void setAttaque() override {} // Ne change jamais
