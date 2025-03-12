@@ -9,9 +9,26 @@ class Attaque {
 protected:
     int type; // 0 : Pierre, 1 : Feuille, 2 : Ciseaux
 
+<<<<<<< HEAD
 public:
     Attaque() {
         type = rand() % 3; // Génère une attaque aléatoire
+=======
+//Taille du tableau
+const int Taille = 10;
+
+
+//Initialisation du tableau
+
+void initPlateau(vector<vector<Animal *>> &plateau) {
+    int TotalAnimal = (Taille * Taille) / 4;
+
+    for (int i = 0; i < TotalAnimal / 2; i++){
+        Animal *Loup = new Loup(Taille, Taille);
+        Animal *Pierre = new Pierre(Taille, Taille);
+        plateau[Loup -> get(X)][Loup -> get(Y)] = Loup;
+        plateau[Pierre -> get(X)][Pierre -> get(Y)] = Pierre;
+>>>>>>> refs/remotes/origin/main
     }
 
     Attaque(int a) : type(a) {} // Crée une attaque spécifique
@@ -26,6 +43,7 @@ public:
         return false;
     }
 
+<<<<<<< HEAD
     string getNomAttaque() const {
         if (type == 0) return "Pierre";
         else if (type == 1) return "Feuille";
@@ -34,6 +52,12 @@ public:
 };
 
 //---------------------------------------------------------------Classe Animal---------------------------------------------------------------
+=======
+//---------------------------------------------------------------Animal---------------------------------------------------------------
+
+
+//Classe Animal
+>>>>>>> refs/remotes/origin/main
 class Animal {
 protected:
     string nom;
