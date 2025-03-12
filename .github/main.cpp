@@ -5,7 +5,6 @@
 // a rajouter apres? srand(time(NULL)) pour initialiser rand
 using namespace std;
 
-
 //Classe Animal
 class Animal {
 protected:
@@ -75,4 +74,3 @@ class Attaque {
         }
     }
 }
-
