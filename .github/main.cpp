@@ -5,6 +5,53 @@
 // a rajouter apres? srand(time(NULL)) pour initialiser rand
 using namespace std;
 
+//---------------------------------------------------------------PLateau---------------------------------------------------------------
+
+//Taille du tableau
+const int Taille = 10;
+
+//Initialisation du tableau
+
+void initPlateau(vector<vector<Animal *>> &plateau) {
+    int TotalAnimal = (Taille * Taille) / 4; //25% du plateau est rempli
+
+    for (int i = 0; i < TotalAnimal / 2; i++){
+        Animal *Loup = new Loup(Taille, Taille);
+        Animal *Pierre = new Pierre(Taille, Taille);
+        plateau[Loup -> get(X)][Loup -> get(Y)] = Loup;
+        plateau[Pierre -> get(X)][Pierre -> get(Y)] = Pierre;
+    }
+}
+
+void afficherPlateau(vector<vector<Animal *>> &plateau) {
+    //On parcourt  l'ensemble des cases
+    for (int i = 0; i < Taille; i++){
+        for (int j = 0; j < Taille; j++){
+            //Cas où la case est vide
+            if (plateau[i][j] == nullptr){
+                cout << ".  ";
+            }
+            //Comparaison du type de la case du plateau avec Loup : si le pointeur est un Loup alors la conversion est réussit (=true)
+            else if (dynamic_cast<Loup *> (plateau[i][j])){
+                cout << "L";
+            }
+            else{
+                cout << "P";
+            }
+        }
+    }
+}
+
+int main() {
+
+    vector<vector<Animal *>> plateau(Taille, vector<Animal *>(Taille,nullptr));
+
+    initPlateau(plateau);
+    afficherPlateau(plateau);
+
+    return 0;
+}
+
 //Classe Animal
 class Animal {
 protected:
