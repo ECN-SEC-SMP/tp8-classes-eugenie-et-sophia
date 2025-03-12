@@ -2,6 +2,8 @@
 #include <cstdlib>
 #include <ctime>
 
+using namespace std;
+
 //Classe Animal
 class Animal {
 protected:
