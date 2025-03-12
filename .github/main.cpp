@@ -11,7 +11,7 @@ int Taille = 10;
 
 //Initialisation du tableau
 
-void initPlateau(vector<vector<Animal *>> &plateau) {
+void initPlateau(vector<vector<Animal *>> &plateau) { //On cgréer un tableau dynamique (vecteur 2D) qui représente une grille *Animal, cad des pointeurs sur des objets type Animal
     int TotalAnimal = (Taille * Taille) / 4;
 
     for (int i = 0; i < TotalAnimal / 2; i++){
