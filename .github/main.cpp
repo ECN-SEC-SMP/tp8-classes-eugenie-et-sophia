@@ -74,13 +74,21 @@ public:
 
     bool attaque(Animal& a) {
         if (typeAttaque.resoudreAttaque(a.getAttaque())) {
-            a.setVivant(false);
+            a.setVivant(false); //Quand l'attaque est true le joueur a n'est plus vivant
             return true;
         }
         return false;
     }
 };
 
+//Classe représentant un Loup
+class Loup : public Animal {
+public:
+    Loup(int maxX, int maxY) : Animal (maxX, maxY) {setAttaque(); }
+
+    void setAttaque() {}
+
+//---------------------------------------------------------------Attaque---------------------------------------------------------------
 
 //Classe Attaque
 class Attaque {
