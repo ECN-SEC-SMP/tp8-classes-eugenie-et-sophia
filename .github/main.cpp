@@ -9,6 +9,7 @@ using namespace std;
 //Taille du tableau
 int Taille = 10;
 
+
 //Initialisation du tableau
 
 void initPlateau(vector<vector<Animal *>> &plateau) { //On cgréer un tableau dynamique (vecteur 2D) qui représente une grille *Animal, cad des pointeurs sur des objets type Animal
