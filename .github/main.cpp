@@ -23,6 +23,17 @@ void initPlateau(vector<vector<Animal *>> &plateau) { //On cgréer un tableau dy
     }
 }
 
+void afficherPlateau(vector<vector<Animal *>> &plateau) {
+    //On parcourt  l'ensemble des cases
+    for (int i = 0; i < Taille; i++){
+        for (int j = 0; j < Taille; j++){
+            //Cas où la case est vide
+            if (plateau[i][j]=)
+        }
+    }
+}
+
+
 //Classe Animal
 class Animal {
 protected:
