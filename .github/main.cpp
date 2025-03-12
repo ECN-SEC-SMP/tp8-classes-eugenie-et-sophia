@@ -6,6 +6,22 @@
 
 using namespace std;
 
+//Taille du tableau
+int Taille = 10;
+
+//Initialisation du tableau
+
+void initPlateau(vector<vector<Animal *>> &plateau) {
+    int TotalAnimal = (Taille * Taille) / 4;
+
+    for (int i = 0; i < TotalAnimal / 2; i++){
+        Animal *Loup = new Loup(Taille, Taille);
+        Animal *Pierre = new Pierre(Taille, Taille);
+        plateau[Loup -> get(X)][Loup -> get(Y)] = Loup;
+        plateau[Pierre -> get(X)][Pierre -> get(Y)] = Pierre;
+    }
+}
+
 //Classe Animal
 class Animal {
 protected:
