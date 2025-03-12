@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
+// Reorganisé 
 
 //---------------------------------------------------------------Classe Attaque---------------------------------------------------------------
 class Attaque {
