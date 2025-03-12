@@ -2,9 +2,9 @@
 #include <cstdlib>
 #include <ctime>
 
-// a rajouter apres? srand(time(NULL))
-
+// a rajouter apres? srand(time(NULL)) pour initialiser rand
 using namespace std;
+
 
 //Classe Animal
 class Animal {
@@ -74,8 +74,5 @@ class Attaque {
             return ciseaux;
         }
     }
-
-
-
-
 }
+
