@@ -53,12 +53,29 @@ class Attaque {
     }
 
     Attaque(int a) : type(a) {}//crée une attaque spécifique
+    
     int getTypeAttaque() const { return type; } // retourne l'attaque
-    bool resoudreAttaque(Attaque &a) const {
-        
-
+    
+    bool resoudreAttaque(Attaque &a) const { // envoie vrai si l’attaque sur laquelle est appliquée la fonction est "plus forte" que l’attaque passée en paramètre
+        if ( type == 0 && a.type == 2 || type == 1 && a.type == 0 || type == 2 && a.type == 1){
+            return True;
+        }
+        return false;
     }
-    string getNomAttaque() const
+
+    string getNomAttaque() const { // traduit le type numéro en string pour décrire les attaques
+        if (type == 0){
+            return pierre;
+        }
+        else if (type == 1){
+            return feuille;
+        }
+        else if (type == 2){
+            return ciseaux;
+        }
+    }
+
+
 
 
 }
