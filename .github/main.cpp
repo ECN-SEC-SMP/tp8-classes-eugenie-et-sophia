@@ -22,13 +22,21 @@ void initPlateau(vector<vector<Animal *>> &plateau) { //On cgréer un tableau dy
         plateau[Pierre -> get(X)][Pierre -> get(Y)] = Pierre;
     }
 }
-
 void afficherPlateau(vector<vector<Animal *>> &plateau) {
     //On parcourt  l'ensemble des cases
     for (int i = 0; i < Taille; i++){
         for (int j = 0; j < Taille; j++){
             //Cas où la case est vide
-            if (plateau[i][j]=)
+            if (plateau[i][j] == nullptr){
+                cout << ".  ";
+            }
+            //Comparaison du type de la case du plateau avec Loup : si le pointeur est un Loup alors la conversion est réussit (=true)
+            else if (dynamic_cast<Loup *> (plateau[i][j])){
+                cout << "L";
+            }
+            else{
+                cout << "P";
+            }
         }
     }
 }
