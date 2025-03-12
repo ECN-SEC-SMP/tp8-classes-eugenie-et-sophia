@@ -10,10 +10,11 @@ using namespace std;
 //Taille du tableau
 const int Taille = 10;
 
+
 //Initialisation du tableau
 
 void initPlateau(vector<vector<Animal *>> &plateau) {
-    int TotalAnimal = (Taille * Taille) / 4; //25% du plateau est rempli
+    int TotalAnimal = (Taille * Taille) / 4;
 
     for (int i = 0; i < TotalAnimal / 2; i++){
         Animal *Loup = new Loup(Taille, Taille);
@@ -42,15 +43,8 @@ void afficherPlateau(vector<vector<Animal *>> &plateau) {
     }
 }
 
-int main() {
+//---------------------------------------------------------------Animal---------------------------------------------------------------
 
-    vector<vector<Animal *>> plateau(Taille, vector<Animal *>(Taille,nullptr));
-
-    initPlateau(plateau);
-    afficherPlateau(plateau);
-
-    return 0;
-}
 
 //Classe Animal
 class Animal {
