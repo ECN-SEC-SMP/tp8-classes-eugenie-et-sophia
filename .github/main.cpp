@@ -73,32 +73,12 @@ public:
     virtual void afficher() const = 0;
 };
 
-<<<<<<< HEAD
 //---------------------------------------------------------------Classes spécifiques---------------------------------------------------------------
 class Pierre : public Animal {
 public:
     Pierre(int maxX, int maxY) : Animal(maxX, maxY) {
         nom = "Pierre";
         typeAttaque = Attaque(0); // Toujours "Pierre"
-=======
-//Classe représentant un Loup
-class Loup : public Animal {
-public:
-    Loup(int maxX, int maxY) : Animal (maxX, maxY) {setAttaque(); }
-
-    void setAttaque() {}
-
-//---------------------------------------------------------------Attaque---------------------------------------------------------------
-
-//Classe Attaque
-class Attaque {
-    protected:
-    int type // 0 :pierre, 1: Feuille, 2:Ciseaux
-
-    public:
-    Attaque() {
-        type = rand() % 3; // Attaque aléatoire pierre feuille ou ciseaux
->>>>>>> refs/remotes/origin/main
     }
 
     void setAttaque() override {} // Ne change jamais
@@ -107,6 +87,7 @@ class Attaque {
 
     void afficher() const override { cout << " P "; }
 };
+
 
 class Loup : public Animal {
 public:
@@ -125,6 +106,62 @@ public:
     }
 
     void afficher() const override { cout << " L "; }
+};
+
+
+class Lion : public Animal{
+public :
+    Lion(int maxX, int maxY) : Animal(maxX, maxY) {
+        nom = "Lion";
+        setAttaque();
+    }
+
+    // Définition de l'attaque (aléatoirement feuille ou ciseaux)
+    void setAttaque() override {
+        int choix = rand() % 2; //Choix aléatoire entre 0 ou 1
+        typeAttaque = (choix == 0) ? Attaque(1) : Attaque(2); //Soit Feuille, soit Ciseaux
+    }
+
+    // Déplacement en diagonale
+    void deplace(int maxX, int maxY) override {
+        //Ensemble des possibilités pour un lion
+        int dx[4] = {1, 1, -1, -1};
+        int dy[4] = {1, -1, -1, 1};
+
+        int direction = rand() % 4;
+        x = (x + dx[direction] + maxX) % maxX;
+        y = (y + dy[direction] + maxY) % maxY;
+    }
+
+    void afficher() const override { cout << " L "; }
+};
+
+
+class Ours : public Animal{
+public:
+    Ours(int maxX, int maxY) : Animal(maxX, maxY) {
+        nom = "Ours";
+        setAttaque();
+    }
+
+    void setAttaque() override {
+        int choix = rand() % 4; //Choix aléatoire entre 0 ou 3
+        typeAttaque = Attaque(1); //Attaque Feuille 
+    }
+
+    // Déplacement en diagonale
+    void deplace(int maxX, int maxY) override {
+        //Ensemble des possibilités pour un lion
+        int dx[8] = {1, 1, -1, -1, 2, 2, -2, -2};
+        int dy[8] = {1, -1, -1, 1, 2, 2, -2, -2};
+
+        int direction = rand() % 8;
+        x = (x + dx[direction] + maxX) % maxX;
+        y = (y + dy[direction] + maxY) % maxY;
+    }
+
+    void afficher() const override { cout << " O "; }
+
 };
 
 //---------------------------------------------------------------PLateau---------------------------------------------------------------
