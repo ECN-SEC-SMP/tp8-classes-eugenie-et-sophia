@@ -4,9 +4,6 @@
 #include <ctime>
 using namespace std;
 
-#test 4
-
-
 //---------------------------------------------------------------Classe Attaque---------------------------------------------------------------
 class Attaque {
 protected:
