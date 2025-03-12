@@ -2,6 +2,8 @@
 #include <cstdlib>
 #include <ctime>
 
+// a rajouter apres? srand(time(NULL))
+
 using namespace std;
 
 //Classe Animal
@@ -41,3 +43,22 @@ public:
 
 
 //Classe Attaque
+class Attaque {
+    protected:
+    int type // 0 :pierre, 1: Feuille, 2:Ciseaux
+
+    public:
+    Attaque() {
+        type = rand() % 3; // Attaque aléatoire pierre feuille ou ciseaux
+    }
+
+    Attaque(int a) : type(a) {}//crée une attaque spécifique
+    int getTypeAttaque() const { return type; } // retourne l'attaque
+    bool resoudreAttaque(Attaque &a) const {
+        
+
+    }
+    string getNomAttaque() const
+
+
+}
